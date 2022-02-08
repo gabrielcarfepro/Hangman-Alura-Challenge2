@@ -1,0 +1,29 @@
+#leftEye {
+  transition: 0.5s ease;
+}
+
+#rightEye {
+  transition: 0.7s ease;
+}
+
+#teste {
+  transition: 0.5s ease;
+  animation: blinkEyes 5s infinite ease;
+}
+
+#teste2 {
+  transition: 0.5s ease;
+  animation: blinkEyes 5s infinite ease;
+}
+
+@keyframes blinkEyes {
+  5% {
+    height: 20px;
+    fill: aqua;
+    transform: translate(0, 5%);
+  }
+  10% {
+    height: 60px;
+    transform: translate(0, 0%);
+  }
+}
