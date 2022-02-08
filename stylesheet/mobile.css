@@ -1,0 +1,15 @@
+@media (min-width: 412px) {
+  .errorBar {
+    width: 20rem;
+    left: 42%;
+    top: 36.6%;
+  }
+
+  #char {
+    left: 15%;
+  }
+
+  .pushBar {
+    left: 0px;
+  }
+}
