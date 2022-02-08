@@ -5,3 +5,5 @@ document.addEventListener('keydown', e => {
   let keyName = e.key
   console.log(palavra.indexOf(keyName))
 })
+
+alert(window.screen.height)

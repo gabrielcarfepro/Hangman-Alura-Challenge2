@@ -43,3 +43,26 @@
     transform: translate(0, 0%);
   }
 }
+
+.tiredExpression {
+  transform: translate(0, 0);
+  animation: tired 5s ease;
+}
+
+@keyframes tired {
+  0% {
+    transform: translate(0, 0);
+  }
+  10% {
+    transform: translate(0, 20%);
+    height: 20px;
+  }
+  90% {
+    transform: translate(0, 20%);
+    height: 20px;
+  }
+  100% {
+    transform: translate(0, 0);
+    height: 60px;
+  }
+}
