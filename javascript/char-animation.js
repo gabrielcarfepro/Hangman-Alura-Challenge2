@@ -24,3 +24,8 @@ function trackMouse(e) {
   leftEye.style.transform = `translate(${Xposition}%, ${Yposition}%)`
   rightEye.style.transform = `translate(${Xposition}%, ${Yposition}%)`
 }
+
+/*function paidAttention() {
+  leftEye.style.transform = 'scale(1.5) translate(-20%, -14%)'
+  rightEye.style.transform = 'scale(1.5) translate(-14%, -14%)'
+}*/

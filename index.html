@@ -6,11 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="stylesheet/char-animation.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap"
+      rel="stylesheet"
+    />
     <title>ONE Challenge - Jogo da Forca</title>
   </head>
   <body>
-    <header></header>
+    <header>
+      <h1 class="title">Hangbug</h1>
+    </header>
     <section>
+      <div class="errorBar"></div>
+      <div class="pushBar"></div>
       <svg
         id="char"
         width="328"
@@ -37,7 +47,7 @@
         />
         <g id="leftEye" filter="url(#filter1_i_2_14)">
           <rect
-            id="teste"
+            id="leftPupil"
             x="195"
             y="109"
             width="60"
@@ -48,7 +58,7 @@
         </g>
         <g id="rightEye" filter="url(#filter2_i_2_14)">
           <rect
-            id="teste2"
+            id="rightPupil"
             x="85"
             y="109"
             width="60"

@@ -1,3 +1,19 @@
+#char {
+  position: fixed;
+  left: 40%;
+  top: 30%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 100px;
+}
+
+/*#char {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}*/
+
 #leftEye {
   transition: 0.5s ease;
 }
@@ -6,12 +22,12 @@
   transition: 0.7s ease;
 }
 
-#teste {
+#leftPupil {
   transition: 0.5s ease;
   animation: blinkEyes 5s infinite ease;
 }
 
-#teste2 {
+#rightPupil {
   transition: 0.5s ease;
   animation: blinkEyes 5s infinite ease;
 }
