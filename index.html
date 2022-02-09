@@ -16,6 +16,25 @@
     <title>ONE Challenge - Jogo da Forca</title>
   </head>
   <body>
+    <div class="win">
+      <h1 class="title">Parabéns, você ganhou!</h1>
+      <input
+        class="startButton"
+        type="button"
+        value="INICIAR NOVAMENTE"
+        onclick="startGame()"
+      />
+    </div>
+    <div class="loose">
+      <h1 class="title">Você Perdeu</h1>
+      <input
+        id="restartButton"
+        type="button"
+        value="Recomeçar"
+        onclick="startGame()"
+      />
+    </div>
+    <span id="warning"> Essa letra já foi usada </span>
     <header>
       <h1 class="title">Hangbug</h1>
     </header>
@@ -198,6 +217,7 @@
           </radialGradient>
         </defs>
       </svg>
+      <div class="boxLetters"></div>
     </section>
     <footer></footer>
     <script type="text/javascript" src="javascript/script.js"></script>

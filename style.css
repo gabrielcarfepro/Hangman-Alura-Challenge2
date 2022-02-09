@@ -8,6 +8,39 @@ body {
   background-color: aqua;
 }
 
+.win {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: aqua;
+  z-index: 3;
+  display: none;
+}
+
+.loose {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: aqua;
+  z-index: 3;
+  display: none;
+  transition: 1s;
+}
+
+#restartButton {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 200px;
+  height: 50px;
+
+  font-size: 30px;
+
+  cursor: pointer;
+}
+
 .title {
   color: white;
   text-align: center;
@@ -27,6 +60,7 @@ body {
   height: 0.65rem;
   border-radius: 10px;
   background-color: aliceblue;
+  box-shadow: #00000023 1px 3px 3px 3px;
 }
 
 .pushBar {
@@ -37,13 +71,94 @@ body {
   height: 6.25rem;
   background-color: aliceblue;
   border-radius: 10px;
+  display: none;
 }
 
-#config {
+.boxLetters {
   position: fixed;
-  right: 3.12rem;
-  top: 1.8rem;
-  width: 3.12rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, 0);
+
+  min-width: 60rem;
+  height: 4rem;
+}
+
+.letters {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  width: 4rem;
+  height: 0.65rem;
+  height: 4rem;
+
+  font-size: 40px;
+  text-align: center;
+  margin: 0px 10px 0px 10px;
+  border-radius: 10px;
+  background-color: aliceblue;
+  box-shadow: #00000023 0px 0px 3px 4px;
+}
+
+.letras {
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.vazio {
+  background-color: transparent;
+  box-shadow: none;
+  width: 1.5rem;
+}
+
+.startButton {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 200px;
+  height: 50px;
+
+  font-size: 30px;
+
   cursor: pointer;
-  transition: 0.3s ease;
+}
+
+#warning {
+  position: absolute;
+  left: 50%;
+  top: 39%;
+  transform: translate(-50%, 0);
+
+  font-size: 40px;
+  color: white;
+  text-shadow: #00000023 3px 3px 3px;
+  display: none;
+  animation: waningAnimation 3s forwards;
+}
+
+@keyframes waningAnimation {
+  0% {
+    color: transparent;
+    text-shadow: none;
+  }
+  20% {
+    color: white;
+    text-shadow: #00000023 3px 3px 3px;
+  }
+  80% {
+    color: white;
+    text-shadow: #00000023 3px 3px 3px;
+  }
+  100% {
+    color: transparent;
+    text-shadow: none;
+  }
 }

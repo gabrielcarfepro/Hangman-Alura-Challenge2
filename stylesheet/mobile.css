@@ -1,4 +1,8 @@
 @media (max-width: 413px) {
+  .title {
+    font-size: 80px;
+  }
+
   .errorBar {
     width: 20rem;
     left: 42%;
@@ -11,5 +15,38 @@
 
   .pushBar {
     left: 0px;
+  }
+
+  .boxLetters {
+    min-width: 23rem;
+    flex-wrap: wrap;
+    min-height: 4rem;
+    height: 12rem;
+    top: 55%;
+  }
+
+  .letters {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .letras {
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+}
+
+@media (max-width: 1537px) {
+  .title {
+    font-size: 115px;
+  }
+
+  #char {
+    left: 36.7%;
+    top: 28.6%;
   }
 }
