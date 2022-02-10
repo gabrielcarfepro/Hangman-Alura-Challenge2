@@ -2,7 +2,7 @@ const boxLetters = document.querySelector('.boxLetters')
 const startButton = document.querySelector('.startButton')
 const win = document.querySelector('.win')
 const loose = document.querySelector('.loose')
-let words = ['ALURA', 'ORACLE', 'ONE']
+let words = ['ALURA', 'ORACLE', 'ONE', 'ESTUDO', 'PROGRAMAÇAO', 'CHALLENGE']
 let randomWord
 let word
 let splitedWord
@@ -39,8 +39,24 @@ function startGame() {
 
 startGame()
 
-document.addEventListener('keydown', async e => {
-  let keyName = e.key.toLocaleUpperCase()
+// CAPTURAR LETRAS DO TECLADO
+
+document.addEventListener('keydown', e => {
+  gameLogic(e.key)
+})
+
+// KEYBOARD MOBILE
+
+window.onload = async function () {
+  document.querySelectorAll('.keys').forEach(e => {
+    e.addEventListener('click', function () {
+      gameLogic(e.textContent)
+    })
+  })
+}
+
+async function gameLogic(e) {
+  let keyName = e.toLocaleUpperCase()
   let foundAnyLetter = findLetters(splitedWord, keyName)
   let isAlreadyFound = findLetters(alreadyFoundLetters, keyName)
 
@@ -80,7 +96,7 @@ document.addEventListener('keydown', async e => {
       }
     }
   }
-})
+}
 
 function findLetters(array, letter) {
   return array.indexOf(letter) > -1
@@ -127,9 +143,14 @@ function resetGame() {
   char.classList.remove('fallChar')
   leftEye.classList.remove('looseEyeEffect')
   rightEye.classList.remove('looseEyeEffect')
-
   pushPercent = -3.12
-  char.style.transform = `translate(${pushPercent}rem, -50%)`
+  pushPercentMobile = -9.3
+  if (window.screen.width <= 413) {
+    char.style.transform = `translate(${pushPercentMobile}rem, -40%)`
+  } else {
+    char.style.transform = `translate(${pushPercent}rem, -50%)`
+  }
+
   document.querySelectorAll('.letters').forEach(e => {
     e.remove()
   })

@@ -55,9 +55,15 @@ startButton.addEventListener('mouseleave', () => {
 // ANIMAÇÃO PERSONAGEM SENDO EMPURRADO
 
 let pushPercent = -3.12
+let pushPercentMobile = -10
 function pushChar() {
-  pushPercent += 5.3
-  char.style.transform = `translate(${pushPercent}rem, -50%)`
+  if (window.screen.width <= 413) {
+    pushPercentMobile += 3.5
+    char.style.transform = `translate(${pushPercentMobile}rem, -40%)`
+  } else {
+    pushPercent += 5.3
+    char.style.transform = `translate(${pushPercent}rem, -50%)`
+  }
 }
 
 // POSICIONAR PERSONAGEM VITÓRIA

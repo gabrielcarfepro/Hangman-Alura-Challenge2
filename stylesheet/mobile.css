@@ -10,7 +10,7 @@
   }
 
   #char {
-    left: 15%;
+    transform: translate(-148%, -40%);
   }
 
   .pushBar {
@@ -37,6 +37,55 @@
     position: relative;
     left: 50%;
     transform: translate(-50%, 0);
+  }
+
+  .keyboard {
+    position: absolute;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    width: 400px;
+    height: 150px;
+    bottom: 2%;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+
+  .key-lines {
+    display: flex;
+    justify-content: space-around;
+    width: 400px;
+    height: 40px;
+  }
+
+  #winTitle {
+    position: relative;
+    font-size: 50px;
+    top: 5%;
+  }
+
+  #boxFirework {
+    top: 22.3%;
+  }
+
+  .charWin {
+    position: absolute;
+    z-index: 3;
+    width: 150px;
+    left: 50%;
+    top: 32%;
+  }
+
+  .keys {
+    width: 35px;
+    height: 35px;
+    background-color: rgba(209, 98, 83, 0.123);
+    color: white;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border-radius: 10px;
+    font-size: 30px;
+    box-shadow: #00000015 0px 0px 2px 2px;
   }
 }
 

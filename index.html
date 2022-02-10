@@ -17,7 +17,7 @@
   </head>
   <body>
     <div class="win">
-      <h1 class="title">Parabéns, você ganhou!</h1>
+      <h1 id="winTitle" class="title">Parabéns, você ganhou!</h1>
       <svg
         style="display: none"
         width="328"
@@ -463,6 +463,48 @@
         </defs>
       </svg>
       <div class="boxLetters"></div>
+      <div
+        class="keyboard"
+        unselectable="on"
+        onselectstart="return false;"
+        onmousedown="return false"
+      >
+        <div class="key-lines">
+          <div class="keys" id="keyQ">Q</div>
+          <div class="keys" id="keyW">W</div>
+          <div class="keys" id="keyE">E</div>
+          <div class="keys" id="keyR">R</div>
+          <div class="keys" id="keyT">T</div>
+          <div class="keys" id="keyY">Y</div>
+          <div class="keys" id="keyU">U</div>
+          <div class="keys" id="keyI">I</div>
+          <div class="keys" id="keyO">O</div>
+          <div class="keys" id="keyP">P</div>
+        </div>
+
+        <div class="key-lines">
+          <div class="keys" id="keyA">A</div>
+          <div class="keys" id="keyS">S</div>
+          <div class="keys" id="keyD">D</div>
+          <div class="keys" id="keyF">F</div>
+          <div class="keys" id="keyG">G</div>
+          <div class="keys" id="keyH">H</div>
+          <div class="keys" id="keyJ">J</div>
+          <div class="keys" id="keyK">K</div>
+          <div class="keys" id="keyL">L</div>
+          <div class="keys" id="keyÇ">Ç</div>
+        </div>
+
+        <div class="key-lines">
+          <div class="keys" id="keyZ">Z</div>
+          <div class="keys" id="keyX">X</div>
+          <div class="keys" id="keyC">C</div>
+          <div class="keys" id="keyV">V</div>
+          <div class="keys" id="keyB">B</div>
+          <div class="keys" id="keyN">N</div>
+          <div class="keys" id="keyM">M</div>
+        </div>
+      </div>
     </section>
     <footer></footer>
     <script type="text/javascript" src="javascript/script.js"></script>
