@@ -34,14 +34,37 @@ function trackMouse(e) {
   rightEye.style.transform = `translate(${Xposition}%, ${Yposition}%)`
 }
 
+let winLeftEye = document.querySelector('.win-leftEye')
+let winRightEye = document.querySelector('.win-rightEye')
+
+startButton.addEventListener('mouseover', () => {
+  winLeftEye.style.transform = 'translate(0, 35%)'
+  winRightEye.style.transform = 'translate(0, 35%)'
+})
+
+startButton.addEventListener('mouseleave', () => {
+  winLeftEye.style.transform = 'translate(0, 0)'
+  winRightEye.style.transform = 'translate(0, 0)'
+})
+
 /*function paidAttention() {
   leftEye.style.transform = 'scale(1.5) translate(-20%, -14%)'
   rightEye.style.transform = 'scale(1.5) translate(-14%, -14%)'
 }*/
 
 // ANIMAÇÃO PERSONAGEM SENDO EMPURRADO
+
 let pushPercent = -3.12
 function pushChar() {
   pushPercent += 5.3
   char.style.transform = `translate(${pushPercent}rem, -50%)`
+}
+
+// POSICIONAR PERSONAGEM VITÓRIA
+
+function winAnimation() {
+  char.style.display = 'none'
+  setTimeout(() => {
+    char.style.display = 'block'
+  }, 100)
 }

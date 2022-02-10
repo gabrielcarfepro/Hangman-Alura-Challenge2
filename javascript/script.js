@@ -46,7 +46,7 @@ document.addEventListener('keydown', async e => {
 
   if (isAlreadyFound) {
     addRemoveAnimation(3000, warning)
-  } else if (foundAnyLetter) {
+  } else if (foundAnyLetter && gameOn) {
     ;(async function addLetterOnScreen() {
       splitedWord.forEach(e => {
         if (e == keyName) {
@@ -61,16 +61,18 @@ document.addEventListener('keydown', async e => {
         span.innerHTML = keyName
       })
       if (numberOfLettersFound == word.length) {
+        wrongTryes = 0
         winGame()
       }
     })()
   } else {
-    if ('ABCDEFGHIJKLMNOPQRSTUVWXYZ'.indexOf(keyName) > -1) {
-      if (gameOn == true) {
+    if ('ABCÇDEFGHIJKLMNOPQRSTUVWXYZ'.indexOf(keyName) > -1) {
+      if (gameOn) {
         wrongTryes++
         pushChar()
       }
       if (wrongTryes == 6) {
+        wrongTryes = 0
         endGame()
         setTimeout(() => {
           loose.style.display = 'block'
@@ -85,39 +87,73 @@ function findLetters(array, letter) {
 }
 
 function winGame() {
+  gameOn = false
   win.style.display = 'block'
-  resetGame()
+  startButton.style.display = 'block'
+  char.style.transform = `translate(-3.12rem, -50%)`
+  // ANIMAÇÃO FOGOS DE ARTIFÍCIO NO DISPLAY
+  winLeftEye.style = 'display: none; transform: translate(0, -28%)'
+  winRightEye.style = 'display: none; transform: translate(0, -28%)'
+  let boxFirework = document.querySelector('#boxFirework')
+  let img = document.createElement('img')
+  boxFirework.appendChild(img)
+  img.classList.add('winFirework')
+  img.src = 'assets/firework.gif'
+  setTimeout(() => {
+    img.remove()
+    winLeftEye.style = 'display: block; transform: translate(0, -28%)'
+    winRightEye.style = 'display: block; transform: translate(0, -28%)'
+    setTimeout(() => {
+      winLeftEye.style = 'display: block; transform: translate(0, 0)'
+      winRightEye.style = 'display: block; transform: translate(0, 0)'
+    }, 10)
+  }, 1500)
 }
 
 function endGame() {
+  gameOn = false
   leftEye.classList.add('looseEyeEffect')
   rightEye.classList.add('looseEyeEffect')
   char.classList.add('fallChar')
   setTimeout(() => {
+    char.classList.remove('fallChar')
     resetGame()
   }, 2000)
 }
 
 function resetGame() {
+  alreadyFoundLetters = []
+  numberOfLettersFound = 0
   char.classList.remove('fallChar')
   leftEye.classList.remove('looseEyeEffect')
   rightEye.classList.remove('looseEyeEffect')
 
   pushPercent = -3.12
   char.style.transform = `translate(${pushPercent}rem, -50%)`
-  gameOn = false
-  startButton.style.display = 'block'
   document.querySelectorAll('.letters').forEach(e => {
     e.remove()
   })
-  alreadyFoundLetters = []
-  wrongTryes = 0
-  numberOfLettersFound = 0
+  startGame()
 }
 
 async function addRemoveAnimation(time, element) {
-  element.style.display = 'block'
-  setTimeout(() => {
-    element.style.display = 'none'
-  }, time)
+  if (gameOn) {
+    element.style.display = 'block'
+    setTimeout(() => {
+      element.style.display = 'none'
+    }, time)
+  }
 }
+
+let cor = '#2c363f'
+theme.addEventListener('click', () => {
+  if (cor == '#2c363f') {
+    console.log('cinza')
+    cor = 'aqua'
+    document.querySelector('body').style.backgroundColor = 'aqua'
+  } else {
+    console.log('azul')
+    cor = '#2c363f'
+    document.querySelector('body').style.backgroundColor = '#2c363f'
+  }
+})
